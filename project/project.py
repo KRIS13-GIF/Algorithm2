@@ -1,13 +1,11 @@
 
 #Main Function
 def call(idx, w):
-    
-    if idx == len(arr):
-        print(w)                        # print all possible combinations
 
     tmp = ""
     
     for i in range(idx, len(arr)):      # go through the arr
+        
         tmp += arr[i]                   # add current char/words to tmp
         
         try:
@@ -17,7 +15,10 @@ def call(idx, w):
             
         except:
             
-            continue
+            continue    
+             
+    if idx == len(arr):
+        print(w)                        # print all possible combinations
 
 
 strings = []                            # read input
