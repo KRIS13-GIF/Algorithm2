@@ -1,3 +1,19 @@
+
+#Main Function
+def call(idx, w):
+    if idx == len(arr):
+        print(w)                        # print all possible combinations
+
+    tmp = ""
+    for i in range(idx, len(arr)):      # go through the arr
+        tmp += arr[i]                   # add current char/words to tmp
+        try:
+            dictionary[tmp]             # call dictionary
+            call(i+1, w+tmp+" ")        # print(temp, end=" ")
+        except:
+            continue
+
+
 strings = []                            # read input
 with open('test.txt') as s:             # rename text file -------------------------------
     strings = s.readlines()         
@@ -17,20 +33,3 @@ for s in strings:                       # loop through the array
     c += 1
 
 call(0, "")                             # call func
-
-
-#Main Function
-def call(idx, w):
-    if idx == len(arr):
-        print(w)                        # print all possible combinations
-
-    tmp = ""
-    for i in range(idx, len(arr)):      # go through the arr
-        tmp += arr[i]                   # add current char/words to tmp
-        try:
-            dictionary[tmp]             # call dictionary
-            call(i+1, w+tmp+" ")        # print(temp, end=" ")
-        except:
-            continue
-
-
